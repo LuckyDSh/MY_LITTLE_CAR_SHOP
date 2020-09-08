@@ -1,14 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using My_Little_Car_Shop.Data;
 using My_Little_Car_Shop.Data.Interfaces;
-using My_Little_Car_Shop.Data.Mocks;
+using My_Little_Car_Shop.Data.Repository;
 
 namespace My_Little_Car_Shop
 {
@@ -18,10 +17,18 @@ namespace My_Little_Car_Shop
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IAllCars, MockCars>();
-            services.AddTransient<ICarsCategory, MockCategory>();
+            services.AddTransient<IAllCars, CarRepository>();
+            services.AddTransient<ICarsCategory, CategoryRepository>();
+            services.AddDbContext<AppDBContent>(options=>options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
 
         }
+
+        private IConfigurationRoot _confString;
+        public Startup(IHostEnvironment hostEnvironment)
+        {
+            _confString = new ConfigurationBuilder().SetBasePath(hostEnvironment.ContentRootPath).AddJsonFile("DBSettings").Build();
+        }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -32,6 +39,13 @@ namespace My_Little_Car_Shop
             }
 
             app.UseRouting();
+
+            using (var scope = app.ApplicationServices.CreateScope())
+            {
+                AppDBContent content = scope.ServiceProvider.GetRequiredService<AppDBContent>();
+                DbObjects.Initial(content);
+            }
+
 
             app.UseEndpoints(endpoints =>
             {

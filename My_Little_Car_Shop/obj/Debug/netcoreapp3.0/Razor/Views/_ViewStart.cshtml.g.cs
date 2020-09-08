@@ -19,8 +19,15 @@ using My_Little_Car_Shop.ViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "F:\DIMA'S FILES\projects\My_Little_Car_Shop\Views\_ViewImports.cshtml"
+using My_Little_Car_Shop.Data.Models;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"79bfe2522013549c6a2bdc92c54bc074a2380b2e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"118b7868a7dbfd948f30810479e88030e8198d64", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
