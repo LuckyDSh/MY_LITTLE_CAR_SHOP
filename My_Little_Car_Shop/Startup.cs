@@ -1,3 +1,8 @@
+/*
+ *  TickLuck Team
+ *  All rights reserved 
+ */
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -20,6 +25,7 @@ namespace My_Little_Car_Shop
         {
             services.AddTransient<IAllCars, CarRepository>();
             services.AddTransient<ICarsCategory, CategoryRepository>();
+            services.AddTransient<IAllOrders, OrderRepository>();
             services.AddDbContext<AppDBContent>(options=>options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => ShopCart.GetCart(sp));
@@ -57,6 +63,13 @@ namespace My_Little_Car_Shop
                 {
                     await context.Response.WriteAsync("Hello World!");
                 });
+            });
+
+            //app.UseMvcWithDefaultRoute();
+
+            app.UseMvc(routes => {
+                routes.MapRoute(name: "Default", template: "{controller-Home}/{action-index/{id}}");
+                routes.MapRoute(name: "CategoryFilter", template: "Car/{action}/{Category?}"/*new {controller:"Car",action = "List"} */ );
             });
 
             app.UseSession();

@@ -5,12 +5,12 @@
 
 using My_Little_Car_Shop.Data.Models;
 using System.Collections.Generic;
+using System.Runtime.ConstrainedExecution;
 
 namespace My_Little_Car_Shop.ViewModels
 {
-    public class CarListViewModel
+    public class HomeViewModel
     {
-        public IEnumerable<Car> AllCars { get; set; }
-        public string currCategory { get; set; }
+        public IEnumerable<Car> FavCars { get; set; }
     }
 }

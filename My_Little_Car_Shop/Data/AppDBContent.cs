@@ -1,4 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/*
+ *  TickLuck Team
+ *  All rights reserved 
+ */
+
+using Microsoft.EntityFrameworkCore;
 using My_Little_Car_Shop.Data.Models;
 
 namespace My_Little_Car_Shop.Data
@@ -13,6 +18,7 @@ namespace My_Little_Car_Shop.Data
         public DbSet<Category> Category { get; set; }
         public DbSet<ShopCartItem> ShopCartItems { get; set; }
 
-
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
     }
 }

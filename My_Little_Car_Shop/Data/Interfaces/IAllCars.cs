@@ -1,4 +1,9 @@
-﻿using My_Little_Car_Shop.Data.Models;
+﻿/*
+ *  TickLuck Team
+ *  All rights reserved 
+ */
+
+using My_Little_Car_Shop.Data.Models;
 using System.Collections.Generic;
 
 namespace My_Little_Car_Shop.Data.Interfaces

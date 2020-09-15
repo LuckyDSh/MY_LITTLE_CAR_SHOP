@@ -4,12 +4,11 @@
  */
 
 using My_Little_Car_Shop.Data.Models;
-using System.Collections.Generic;
 
 namespace My_Little_Car_Shop.Data.Interfaces
 {
-    public interface ICarsCategory
+    public interface IAllOrders
     {
-        IEnumerable<Category> AllCategories { get; }
+        void CreateOrder(Order order);
     }
 }

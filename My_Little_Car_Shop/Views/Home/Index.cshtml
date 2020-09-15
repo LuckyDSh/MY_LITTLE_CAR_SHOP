@@ -1,0 +1,18 @@
+﻿@model HomeViewModel  
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>Best Cars</h1>
+    <div class="row mt-5 mb-2 ">
+        @foreach(Car car in Model.FavCars)
+        {
+            @Html.Partial("AllCars", car)
+        }
+    </div>
+</body>
+</html>

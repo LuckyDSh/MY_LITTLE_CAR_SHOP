@@ -1,4 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/*
+ *  TickLuck Team
+ *  All rights reserved 
+ */
+
+using Microsoft.EntityFrameworkCore;
 using My_Little_Car_Shop.Data.Interfaces;
 using My_Little_Car_Shop.Data.Models;
 using System.Collections.Generic;

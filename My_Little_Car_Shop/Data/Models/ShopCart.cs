@@ -1,4 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿/*
+ *  TickLuck Team
+ *  All rights reserved 
+ */
+
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -31,7 +36,7 @@ namespace My_Little_Car_Shop.Data.Models
             return new ShopCart(context) { ShopCartId = shopCartId };
         }
 
-        public void AddToCart(Car car, int amount)
+        public void AddToCart(Car car)
         {
             appDBContent.ShopCartItems.Add(new ShopCartItem
             {
