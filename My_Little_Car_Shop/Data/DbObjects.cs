@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using My_Little_Car_Shop.Data.Models;
+﻿using My_Little_Car_Shop.Data.Models;
 using System.Collections.Generic;
 using System.Linq;
 

@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using My_Little_Car_Shop.Data;
 using My_Little_Car_Shop.Data.Interfaces;
+using My_Little_Car_Shop.Data.Models;
 using My_Little_Car_Shop.Data.Repository;
 
 namespace My_Little_Car_Shop
@@ -20,7 +21,10 @@ namespace My_Little_Car_Shop
             services.AddTransient<IAllCars, CarRepository>();
             services.AddTransient<ICarsCategory, CategoryRepository>();
             services.AddDbContext<AppDBContent>(options=>options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
-
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => ShopCart.GetCart(sp));
+            services.AddMemoryCache();
+            services.AddSession();
         }
 
         private IConfigurationRoot _confString;
@@ -54,6 +58,8 @@ namespace My_Little_Car_Shop
                     await context.Response.WriteAsync("Hello World!");
                 });
             });
+
+            app.UseSession();
         }
     }
 }

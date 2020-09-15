@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "F:\\DIMA'S FILES\\projects\\My_Little_Car_Shop\\My_Little_Car_Shop.csproj": {}
+    "D:\\projects\\MY_LITTLE_CAR_SHOP_rep\\My_Little_Car_Shop\\My_Little_Car_Shop.csproj": {}
   },
   "projects": {
-    "F:\\DIMA'S FILES\\projects\\My_Little_Car_Shop\\My_Little_Car_Shop.csproj": {
+    "D:\\projects\\MY_LITTLE_CAR_SHOP_rep\\My_Little_Car_Shop\\My_Little_Car_Shop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\DIMA'S FILES\\projects\\My_Little_Car_Shop\\My_Little_Car_Shop.csproj",
+        "projectUniqueName": "D:\\projects\\MY_LITTLE_CAR_SHOP_rep\\My_Little_Car_Shop\\My_Little_Car_Shop.csproj",
         "projectName": "My_Little_Car_Shop",
-        "projectPath": "F:\\DIMA'S FILES\\projects\\My_Little_Car_Shop\\My_Little_Car_Shop.csproj",
-        "packagesPath": "C:\\Users\\Luckyfamily\\.nuget\\packages\\",
-        "outputPath": "F:\\DIMA'S FILES\\projects\\My_Little_Car_Shop\\obj\\",
+        "projectPath": "D:\\projects\\MY_LITTLE_CAR_SHOP_rep\\My_Little_Car_Shop\\My_Little_Car_Shop.csproj",
+        "packagesPath": "C:\\Users\\Home-Network\\.nuget\\packages\\",
+        "outputPath": "D:\\projects\\MY_LITTLE_CAR_SHOP_rep\\My_Little_Car_Shop\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Luckyfamily\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Home-Network\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -38,9 +42,21 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "Microsoft.AspNetCore.Http.Extensions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.JsonPatch": {
               "target": "Package",
               "version": "[3.1.7, )"
+            },
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.8, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -51,6 +67,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[3.1.8, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -71,6 +95,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.0.3, 3.0.3]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -79,7 +121,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
